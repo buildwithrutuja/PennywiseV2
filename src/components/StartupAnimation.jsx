@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import mascotImg from '../assets/logo_mascot.png';
+import mascotImg from '../assets/pennywise_mascot.png';
 
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1];
 

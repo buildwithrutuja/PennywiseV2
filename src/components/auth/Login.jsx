@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, ArrowRight, ShieldCheck, UserCircle, Cpu } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { mockUsers } from '../../data/mockUsers';
+import Logo from '../Logo';
 
 export default function Login({ onNavigate }) {
   const { login, loginWithDemo } = useAuth();
@@ -57,11 +58,8 @@ export default function Login({ onNavigate }) {
           </div>
 
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-pw-primary flex items-center justify-center pw-shadow">
-                <span className="text-white font-pw-mono font-bold text-xl">PW</span>
-              </div>
-              <h1 className="text-2xl font-bold font-sans tracking-tight">PennyWise</h1>
+            <div className="flex items-center gap-3 mb-6">
+              <Logo variant="full" height="h-9" />
             </div>
             <h2 className="text-3xl font-bold mb-2">Welcome Back.</h2>
             <p className="text-pw-text-muted">Access your student financial operating system.</p>

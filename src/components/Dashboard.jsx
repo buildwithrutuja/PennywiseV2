@@ -6,7 +6,7 @@ import { AIContext } from '../context/AIContext';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
 import StructuredReport from './StructuredReport';
-import mascotLogo from '../assets/logo_mascot.png';
+import Logo from './Logo';
 
 const StatCard = ({ title, value, icon, index }) => (
   <motion.div 
@@ -158,7 +158,7 @@ const Dashboard = () => {
               <div className="bg-pw-card border border-pw-border rounded-xl p-6 pw-shadow flex flex-col gap-4">
                 <div className="flex items-center justify-between px-1 border-b border-pw-border pb-4">
                   <h3 className="text-sm font-bold flex items-center gap-2 text-pw-text tracking-tight">
-                    <img src={mascotLogo} alt="PennyWise" className="h-4 w-auto object-contain" /> AI INTELLIGENCE REPORT
+                    <Logo variant="mascot" height="h-4" className="inline-block mr-1" /> AI INTELLIGENCE REPORT
                   </h3>
                   <button className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-pw-primary hover:text-pw-primary-muted transition-colors">
                     <Download size={14} /> Export Report
@@ -180,9 +180,7 @@ const Dashboard = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="max-w-md w-full bg-pw-surface border border-pw-border rounded-2xl p-10 flex flex-col items-center text-center pw-shadow"
           >
-            <div className="mb-6">
-              <img src={mascotLogo} alt="Upload Data" className="h-16 w-auto object-contain opacity-80" />
-            </div>
+              <Logo variant="mascot" height="h-16" className="opacity-80 mb-6" />
             <h2 className="text-xl font-bold text-pw-text mb-2 tracking-tight">No Transactions Found</h2>
             <p className="text-sm text-pw-text-muted mb-8 font-medium">Upload your bank statement or use a Demo Account to see your insights.</p>
             

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { UploadCloud, FileText, Lock, Cpu, CheckCircle } from 'lucide-react';
 import { AIContext } from '../context/AIContext';
-import mascotLogo from '../assets/logo_mascot.png';
+import Logo from './Logo';
 
 const ProcessingStep = ({ icon: Icon, title, active, completed, delay }) => {
   return (
@@ -89,9 +89,7 @@ const UploadStatement = () => {
               onDragOver={handleDrag}
               onDrop={handleDrop}
             >
-              <div className="mb-6">
-                <img src={mascotLogo} alt="Upload" className={`h-24 w-auto object-contain transition-all duration-300 ${dragActive ? 'scale-110' : 'opacity-80'}`} />
-              </div>
+                <Logo variant="mascot" height="h-24" className={`mb-6 transition-all duration-300 ${dragActive ? 'scale-110' : 'opacity-80'}`} />
               <h2 className="text-xl font-bold text-pw-text mb-2 tracking-tight">Upload Bank Statement</h2>
               <p className="text-sm text-pw-text-muted mb-8 max-w-sm font-medium">Drag and drop your PDF statement here, or click to browse. Data is processed locally before secure AI transmission.</p>
               
