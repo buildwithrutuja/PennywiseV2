@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pw-primary: var(--color-pw-primary);
+  --color-pw-primary-light: var(--color-pw-primary-light);
+  --color-pw-primary-muted: var(--color-pw-primary-muted);
+  --color-pw-surface: var(--color-pw-surface);
+  --color-pw-card: var(--color-pw-card);
+  --color-pw-border: var(--color-pw-border);
+  --color-pw-text: var(--color-pw-text);
+  --color-pw-text-muted: var(--color-pw-text-muted);
+  --color-pw-text-hint: var(--color-pw-text-hint);
+  
+  --color-pw-green: #10B981;
+  --color-pw-amber: #F59E0B;
+  --color-pw-red: #EF4444;
+  
+  --font-pw-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  /* Turkish Blue - Light Mode */
+  --color-pw-primary: #17A2B8;
+  --color-pw-primary-light: #E0F5F9;
+  --color-pw-primary-muted: #85D4E0;
+  
+  --color-pw-surface: #F0F4F8;
+  --color-pw-card: #FFFFFF;
+  --color-pw-border: rgba(23, 162, 184, 0.15);
+  
+  --color-pw-text: #0F172A;
+  --color-pw-text-muted: #64748B;
+  --color-pw-text-hint: #94A3B8;
+}
+
+.dark {
+  /* Turkish Blue - Dark Mode */
+  --color-pw-primary: #00B4D8;
+  --color-pw-primary-light: rgba(0, 180, 216, 0.15);
+  --color-pw-primary-muted: #0077B6;
+  
+  --color-pw-surface: #0B1120;
+  --color-pw-card: #141E33;
+  --color-pw-border: rgba(0, 180, 216, 0.2);
+  
+  --color-pw-text: #F8FAFC;
+  --color-pw-text-muted: #94A3B8;
+  --color-pw-text-hint: #475569;
+}
+
+@layer base {
+  body {
+    @apply bg-pw-surface text-pw-text font-sans overflow-hidden transition-colors duration-300 m-0;
+  }
+}
+
+/* Custom Utilities */
+.pw-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.dark .pw-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.pw-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-pw-border);
+}
+
+.dark .pw-glass {
+  background: rgba(20, 30, 51, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 180, 216, 0.1);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px var(--color-pw-primary-light);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
