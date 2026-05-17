@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, GraduationCap, Building2, Wallet, Target, ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import Logo from '../Logo';
 
 export default function Signup({ onNavigate }) {
   const { signup } = useAuth();
@@ -71,9 +72,12 @@ export default function Signup({ onNavigate }) {
           <ArrowLeft className="w-6 h-6" />
         </button>
 
-        <div className="text-center mb-8 mt-4">
-          <h2 className="text-3xl font-bold mb-2">Create Student Account</h2>
-          <p className="text-pw-text-muted">Step {step} of 3: {step === 1 ? 'Basic Info' : step === 2 ? 'Academic Details' : 'Financial Setup'}</p>
+        <div className="text-center mb-8 mt-4 flex flex-col items-center gap-4">
+          <Logo variant="full" height="h-9" />
+          <div>
+            <h2 className="text-3xl font-bold mb-1">Create Student Account</h2>
+            <p className="text-pw-text-muted">Step {step} of 3: {step === 1 ? 'Basic Info' : step === 2 ? 'Academic Details' : 'Financial Setup'}</p>
+          </div>
         </div>
 
         {/* Progress bar */}

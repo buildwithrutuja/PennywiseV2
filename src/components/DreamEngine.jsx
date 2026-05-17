@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Target, Rocket, Plus, Crosshair, Calendar, Zap } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import mascotLogo from '../assets/logo_mascot.png';
+import Logo from './Logo';
 
 const DreamEngine = () => {
   const { currentUser } = useAuth();
@@ -91,7 +91,7 @@ const DreamEngine = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 overflow-y-auto pr-2 no-scrollbar">
         {dreams.length === 0 && !isAdding ? (
           <div className="col-span-2 flex flex-col items-center justify-center p-12 text-center bg-pw-card rounded-2xl border border-pw-border pw-shadow">
-            <img src={mascotLogo} alt="No Dreams" className="h-20 opacity-50 mb-4" />
+            <Logo variant="mascot" height="h-20" className="opacity-50 mb-4" />
             <h3 className="text-xl font-bold text-pw-text">No active dreams detected.</h3>
             <p className="text-pw-text-muted mt-2">Initialize a new dream to let PennyWise calculate your optimal savings path.</p>
           </div>

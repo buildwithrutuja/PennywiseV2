@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, createContext, useCallback, useRef } from "react";
 import { LineChart, Line, AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import Logo from "./components/Logo";
 
 // ────────────────────────────────────────────────────────────
 // DATA LAYER — Realistic student finance data
@@ -166,12 +167,9 @@ const Sidebar = () => {
   return (
     <div className="w-56 bg-white border-r border-gray-100 flex flex-col h-full shrink-0" style={{ boxShadow: "1px 0 4px rgba(0,0,0,0.04)" }}>
       <div className="p-5 border-b border-gray-100">
-        <div className="flex items-center gap-2.5 mb-1">
-          <div className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-sm font-bold" style={{ background: "#E8692A" }}>₹</div>
-          <div>
-            <h2 className="text-sm font-bold text-gray-900 tracking-tight">PennyWise</h2>
-            <p className="text-[9px] font-bold text-gray-400 uppercase tracking-wider">Student OS v4.0</p>
-          </div>
+        <div className="flex flex-col items-start gap-3 mb-1">
+          <Logo variant="full" height="h-11" />
+          <p className="text-[9px] font-bold text-gray-400 uppercase tracking-wider pl-1">Student OS v4.0</p>
         </div>
         {beginnerMode && (
           <div className="mt-2 text-[10px] font-semibold px-2 py-1 rounded-lg" style={{ background: "#FFF4EF", color: "#E8692A" }}>
@@ -920,8 +918,8 @@ const UploadStatements = () => {
             <button onClick={(e) => { e.stopPropagation(); setUploaded(null); }} className="text-xs text-red-500 hover:text-red-700 mt-1">Remove file</button>
           </div>
         ) : (
-          <div className="space-y-3">
-            <div className="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center mx-auto text-2xl">📂</div>
+          <div className="space-y-3 flex flex-col items-center">
+            <Logo variant="mascot" height="h-16" className="mx-auto" />
             <div>
               <p className="text-sm font-bold text-gray-700">Drop your bank statement PDF here</p>
               <p className="text-xs text-gray-400 mt-1">or click to browse · PDF format · Max 10MB</p>

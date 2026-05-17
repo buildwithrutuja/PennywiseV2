@@ -3,6 +3,7 @@ import { Target, UploadCloud, Shield, Settings, Activity, Calculator, User } fro
 import { AIContext } from '../context/AIContext';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
+import Logo from './Logo';
 
 const Sidebar = () => {
   const { activeTab, setActiveTab } = useContext(AIContext);
@@ -25,11 +26,8 @@ const Sidebar = () => {
     <div className="w-[240px] bg-pw-surface border-r border-pw-border flex flex-col h-full shrink-0 transition-colors duration-300">
       {/* Header */}
       <div className="p-6 flex flex-col items-start gap-3">
-        <div className="w-12 h-12 bg-pw-primary rounded-xl flex items-center justify-center pw-shadow glow-primary">
-          <span className="text-white font-pw-mono font-bold text-xl">PW</span>
-        </div>
-        <div className="space-y-0.5 mt-2">
-          <h2 className="font-bold text-[15px] text-pw-text tracking-widest uppercase">PennyWise</h2>
+        <Logo variant="full" height="h-11" />
+        <div className="space-y-0.5 mt-1 pl-1">
           <p className="text-[9px] font-bold text-pw-text-muted tracking-widest uppercase">
             System OS V3.0
           </p>

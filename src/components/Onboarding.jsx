@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { AIContext } from '../context/AIContext';
 import { useAuth } from '../context/AuthContext';
-import fullLogo from '../assets/logo_full.png';
+import Logo from './Logo';
 
 const Onboarding = () => {
   const { setUserProfile } = useContext(AIContext);
@@ -48,7 +48,7 @@ const Onboarding = () => {
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="mb-8"
         >
-          <img src={fullLogo} alt="PennyWise Logo" className="h-20 w-auto object-contain" />
+          <Logo variant="full" height="h-10" />
         </motion.div>
         <motion.h1 
           initial={{ y: 10, opacity: 0 }}
@@ -85,7 +85,7 @@ const Onboarding = () => {
               transition={{ duration: 0.8 }}
               className="mb-6"
             >
-              <img src={fullLogo} alt="PennyWise" className="h-14 w-auto object-contain" />
+              <Logo variant="full" height="h-8" />
             </motion.div>
             <h2 className="text-[11px] font-bold tracking-widest uppercase text-pw-text-muted mb-2">System Initialization</h2>
             <div className="flex gap-2">
